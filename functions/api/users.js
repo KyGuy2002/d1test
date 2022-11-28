@@ -2,9 +2,13 @@
 export async function onRequestGet(context) {
     const { request, next, env } = context;
 
-    const { results } = await env.DB.prepare("SELECT * FROM Users").all();
-            
-    return Response.json(results);
+    try {
+        results = await env.DB.prepare("SELECT * FROM Users").all();
+        return Response.json(results);
+    } catch (e) {
+        return new Response(e.cause.message);
+    }
+    
 }
 
 // Create User
