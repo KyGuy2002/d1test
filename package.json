@@ -1,0 +1,17 @@
+{
+  "name": "d1test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset-db": "wrangler d1 execute d1test --file database/schema.sql --local",
+    "dev": "wrangler pages dev static --local --persist",
+    "dev-w": "wrangler dev functions/api/users.js --local --persist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "better-sqlite3": "^7.6.2"
+  }
+}

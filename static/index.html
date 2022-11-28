@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+
+        <h1>Welcome!</h1>
+
+        <h2>Users / Coins</h2>
+        <table id="users-table">
+            <tr>
+              <th>User ID</th>
+              <th>User Name</th>
+              <th>Coins</th>
+              <th>Delete</th>
+            </tr>
+        </table>
+
+        <h2>Shops / Owner</h2>
+        <table id="shops-table">
+            <tr>
+              <th>Shop ID</th>
+              <th>Shop Name</th>
+              <th>Owner Name</th>
+              <th>Delete</th>
+            </tr>
+        </table>
+
+
+        <h2>Create User</h2>
+        <form action="/api/users" method="POST" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
+          <label>Username</label>
+          <input type="text" name="username">
+
+          <label>Email</label>
+          <input type="text" name="email">
+
+          <input type="submit">
+        </form>
+
+
+
+        <h2>Create Shop</h2>
+        <form action="/api/shops" method="POST" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
+          <label>Shop Name</label>
+          <input type="text" name="shopName">
+
+          <label>Shop Owner ID</label>
+          <input type="text" name="shopOwner">
+          
+          <input type="submit">
+        </form>
+
+        <script src="index.js"></script>
+    </body>
+
+</html>
